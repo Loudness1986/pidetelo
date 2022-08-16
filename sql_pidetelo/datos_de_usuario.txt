@@ -1,0 +1,152 @@
+INSERT INTO `usuario` (`cod_user`, `cedula`, `nom_user`, `ape_user`, `tel_user`, `email_user`, `pas_user`, `nivel`, `estado_user`, `cod_val`, `fecha_reg`, `direccion`, `descrip_user`) VALUES
+(1, '19799832', 'Leonel', 'Guanipa', '04245104490', 'leonel.d.j22@gmail.com', '525d2433cd373de4dcfdc1f38edce10adffb76f8', 1, 'activo', '', '2017-10-27', 'acarigua', 'admin'),
+(3, '19799832', 'Leonel', 'Guanipa', '04245104490', 'leonsony_18@hotmail.com', '525d2433cd373de4dcfdc1f38edce10adffb76f8', 2, 'activo', '7d806dddbe08d7bec369', '2017-10-27', 'acarigua', 'usuario activo');
+
+
+
+INSERT INTO `categoria` (`cod_cate`, `nom_cate`) VALUES
+(1, 'Pastas'),
+(2, 'Dulces/Postres'),
+(3, 'Sopas'),
+(5, 'Carnes'),
+(6, 'China'),
+(7, 'Japonesa'),
+(8, 'Gourmet'),
+(9, 'Francesa'),
+(10, 'Pizzas'),
+(11, 'Vegetariana'),
+(12, 'Mexicana'),
+(13, 'Bebida'),
+(14, 'Árabe'),
+(15, 'Criolla'),
+(16, 'Peruana'),
+(17, 'Contornos'),
+(18, 'Charcuteria'),
+(19, 'Delicateses'),
+(20, 'Carnes De Res'),
+(21, 'Vinos'),
+(22, 'Pescados'),
+(23, 'Arreglos Y Detalles'),
+(24, 'Comida Rapida');
+
+
+INSERT INTO `banco` (`cod_ban`, `nom_ban`) VALUES
+(1, 'Banesco'),
+(2, 'Banco de venezuela');
+
+
+--
+-- Volcado de datos para la tabla `ciudad`
+--
+
+INSERT INTO `ciudad` (`cod_ciud`, `nom_ciud`, `cod_est`) VALUES
+(4, 'Acarigua', 1),
+(5, 'Araure', 1);
+
+
+--
+-- Volcado de datos para la tabla `contorno`
+--
+
+INSERT INTO `contorno` (`cod_con`, `nom_con`, `descrip_con`, `cod_neg`) VALUES
+(3, 'Glaseada Normal', 'azucar', 5),
+(4, 'Glaseada Lluvia De Colores', 'con lluvia de colores', 5),
+(5, 'Arequipe', 'cobertura de areqipe', 5),
+(6, 'Nutela', 'relleno de tutela', 5),
+(7, 'Glaseada Chocolate', 'con chocolate', 5),
+(8, 'No Aplica', 'quiere decir que este producto no lleva contorno(s)', 5);
+
+
+INSERT INTO `det_ciudad_negocio` (`cod_ciud`, `cod_neg`) VALUES
+(4, 5);
+
+
+INSERT INTO `det_negocio_usuario` (`cod_user`, `cod_neg`) VALUES
+(2, 5);
+
+
+INSERT INTO `det_prod_cont` (`cod_pro`, `cod_con`) VALUES
+(6, 8),
+(7, 8),
+(8, 8),
+(9, 8),
+(10, 8);
+
+
+--
+-- Volcado de datos para la tabla `det_prod_negocio`
+--
+
+INSERT INTO `det_prod_negocio` (`id_tama`, `tama_pro`, `precio_pro`, `estado_pro`, `cod_neg`, `cod_pro`) VALUES
+(1, 'normal', 12000, 'disponible', 5, 5),
+(3, 'normal', 14000, 'disponible', 5, 6),
+(4, 'normal', 13000, 'disponible', 5, 7),
+(6, 'normal', 14600, 'disponible', 5, 8),
+(7, 'normal', 13450, 'disponible', 5, 9),
+(8, 'normal', 10500, 'disponible', 5, 10);
+
+
+
+--
+-- Volcado de datos para la tabla `det_subp_negocio`
+--
+
+INSERT INTO `det_subp_negocio` (`cod_subp`, `cod_neg`) VALUES
+(1, 5),
+(2, 5);
+
+
+--
+-- Volcado de datos para la tabla `estado`
+--
+
+INSERT INTO `estado` (`cod_est`, `nom_est`) VALUES
+(3, 'Portuguesa');
+
+
+--
+-- Volcado de datos para la tabla `negocio`
+--
+
+INSERT INTO `negocio` (`cod_neg`, `rif_neg`, `nom_neg`, `email_neg`, `tel_pri_neg`, `tel_seg_neg`, `direccion`, `logo_neg`, `min_neg`, `estado_neg`, `estado_pag`) VALUES
+(5, 'J197998322', 'Dey Donut C.a', 'deydonut@gmail.com', '02556534782', '', 'av 31 esquina calle 23 centro comercial marianna local 17', 'ful_a5c06b2cb8.jpg', 'min_a5c06b2cb8.jpg', 'ACTIVO', 'solvente');
+
+
+
+--
+-- Volcado de datos para la tabla `pago_negocio`
+--
+
+INSERT INTO `pago_negocio` (`cod_pag`, `fecha_pag`, `cod_ban`, `num_pag`, `monto_pag`, `cod_neg`) VALUES
+(3, '2017-11-23', 13, '56453423', 1566000, 5);
+
+
+-
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`cod_pro`, `nom_pro`, `descrip_pro`, `tiempo_pro`, `visi_pro`, `cod_cate`, `logo_ful_pro`, `logo_min_pro`) VALUES
+(6, 'Dona Nutela', 'dona rrellena con nutela y glaseado de azucar', '5', 26, 2, 'ful_20499bd6ba.JPG', 'min_20499bd6ba.JPG'),
+(7, 'Dona Lluvia De Colores', 'dona gaseada con lluvia de colores', '5', 2, 2, 'ful_ec7cb281a3.JPG', 'min_ec7cb281a3.JPG'),
+(8, 'brownie', 'torta de chocolate', '5', 0, 2, 'ful_9b08a250de.JPG', 'min_9b08a250de.JPG'),
+(9, 'Torta De Auyama', 'torta de auyama', '0', 15, 2, 'ful_9975047bb2.JPG', 'min_9975047bb2.JPG'),
+(10, 'Dona Glaseada', 'dona glaseada de azucar', '0', 0, 2, 'ful_e99ca4a716.JPG', 'min_e99ca4a716.JPG');
+
+
+
+--
+-- Volcado de datos para la tabla `sub_producto`
+--
+
+INSERT INTO `sub_producto` (`cod_subp`, `nom_subp`, `presen_subp`, `precio_subp`, `estado_subp`, `logo_ful_subp`, `logo_min_subp`) VALUES
+(1, 'Tajadas Con Queso', 'ración', '15000', 'agotado', 'ful_2e6372f637.jpg', 'min_2e6372f637.jpg'),
+(2, 'Papas Fritas', 'ración', '12000', 'disponible', 'ful_eb7f76631d.jpg', 'min_eb7f76631d.jpg');
+
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`cod_user`, `cedula`, `nom_user`, `ape_user`, `tel_user`, `email_user`, `pas_user`, `nivel`, `estado_user`, `cod_val`, `fecha_reg`, `direccion`, `descrip_user`, `t_t_n_n`) VALUES
+(1, '19799832', 'Leonel', 'Guanipa', '04245104490', 'leonel.d.j22@gmail.com', '525d2433cd373de4dcfdc1f38edce10adffb76f8', 1, 'activo', '', '2017-10-27', 'acarigua', 'admin', 'N'),
+(2, '19799832', 'Leonel', 'Guanipa', '04245104490', 'leonsony_18@hotmail.com', '525d2433cd373de4dcfdc1f38edce10adffb76f8', 2, 'activo', '7d806dddbe08d7bec369', '2017-10-27', 'acarigua', 'usuario activo', 'S');
